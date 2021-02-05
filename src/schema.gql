@@ -1,0 +1,13 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Class {
+  id: Int!
+  title: String!
+  description: String!
+}
+
+type Query {
+  class(id: Int!): Class!
+}

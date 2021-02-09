@@ -1,4 +1,5 @@
 import { Field, Int, ObjectType } from '@nestjs/graphql';
+import { Teacher } from '../../teachers/types';
 
 @ObjectType()
 export class Class {
@@ -10,4 +11,7 @@ export class Class {
 
   @Field()
   public description: string;
+
+  @Field(type => Teacher)
+  public teacher: Teacher;
 }

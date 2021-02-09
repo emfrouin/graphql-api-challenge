@@ -2,12 +2,21 @@
 # THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
 # ------------------------------------------------------
 
+type Teacher {
+  id: Int!
+  email: String!
+  firstName: String!
+  lastName: String!
+}
+
 type Class {
   id: Int!
   title: String!
   description: String!
+  teacher: Teacher!
 }
 
 type Query {
+  teacher: Teacher!
   class(id: Int!): Class!
 }

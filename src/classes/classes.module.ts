@@ -6,19 +6,7 @@ import { GetClassQueryHandler } from './queries';
 import { ClassResolvers } from './resolvers';
 
 @Module({
-  imports: [
-    CqrsModule,
-    TypeOrmModule.forFeature([
-      /** Entities */
-      Class,
-    ]),
-  ],
-  providers: [
-    /** Query Handlers */
-    GetClassQueryHandler,
-
-    /** GraphQL Resolvers */
-    ClassResolvers,
-  ],
+  imports: [CqrsModule, TypeOrmModule.forFeature([Class])],
+  providers: [GetClassQueryHandler, ClassResolvers],
 })
 export class ClassesModule {}

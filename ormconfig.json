@@ -1,8 +1,10 @@
 {
     "type": "sqlite",
     "database": "local.db",
+    "synchronize": true,
+    "logging": false,
     "entities": [
-        "src/*.model.ts"
+        "src/**/models/*.ts"
     ],
     "migrations": [
         "src/migrations/*.ts"

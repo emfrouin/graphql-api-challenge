@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
-export class CreateClassesTable1612457425563 implements MigrationInterface {
+export class CreateClassesTable1612882465976 implements MigrationInterface {
   private readonly classTable = new Table({
     name: 'classes',
     columns: [
@@ -19,6 +19,19 @@ export class CreateClassesTable1612457425563 implements MigrationInterface {
         name: 'description',
         isNullable: false,
         type: 'nvarchar',
+      },
+      {
+        name: 'teacherId',
+        isNullable: false,
+        type: 'int',
+      },
+    ],
+    foreignKeys: [
+      {
+        columnNames: ['teacherId'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'teachers',
+        onDelete: 'CASCADE',
       },
     ],
   });

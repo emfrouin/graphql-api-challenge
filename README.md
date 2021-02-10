@@ -91,7 +91,7 @@ GraphQL is the default engine for exposing data to the API consumers. In develop
 | **graphql/explorer**     | Access the GraphQL Playground.                                 |
 | **graphql**              | Accepts GraphQL-compliant queries and returns JSON by default. |
 
-It is advised to use a client library such as [Apollo Client](https://github.com/apollographql/apollo-client) to query the schema since those feature validation and connection management out-of-the-box. However, if regular HTTP (axios, fetch, etc) is preferred, the GraphQL requests are usually done by sending a `POST` request with a body like:
+Use [Apollo Client](https://github.com/apollographql/apollo-client) to query the schema since those feature validation and connection management out-of-the-box. If we were using a regular HTTP stack (axios, fetch, etc), the GraphQL requests are usually done by sending a `POST` request with a body like:
 
 ```json
 {

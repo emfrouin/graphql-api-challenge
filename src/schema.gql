@@ -17,6 +17,5 @@ type Class {
 }
 
 type Query {
-  teacher: Teacher!
   class(id: Int!): Class!
 }

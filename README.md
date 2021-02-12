@@ -41,14 +41,22 @@ git clone git@github.com:emfrouin/graphql-api-challenge.git
 npm install
 ```
 
-### Step 2: Start the API
+### Step 2: Setup the Database
+
+-   Run TypeORM migrations
+
+```
+npm run typeorm -- migration:run
+```
+
+### Step 3: Start the API
 
 -   Run the development version of the application
 ```
 npm run start:dev
 ```
 
-### Step 3: Debugging with VS Code
+### Step 4: Debugging with VS Code
 
 _VS Code_ is an open-source version of the [Visual Studio](https://www.visualstudio.com/) IDE by Microsoft that offers
 code completion and highlighting, debugging, linting, testing, extensions, and lots more. This project includes VS Code
@@ -76,7 +84,7 @@ yarn test [--coverage]
 
 ## ❯ Querying GraphQL
 
-GraphQL is the default engine for exposing data to the API consumers. In development environment, you can access the _Playground_ editor to browse the documentation and test the API schema. Just run the application and go to `localhost:3000/graphql/explorer` in your browser.
+GraphQL is the default engine for exposing data to the API consumers. In development environment, you can access the _Playground_ editor to browse the documentation and test the API schema. Just run the application and go to `localhost:3000/graphql` in your browser.
 
 | URL                      | Description                                                    |
 | ------------------------ | -------------------------------------------------------------- |
@@ -87,7 +95,7 @@ Use [Apollo Client](https://github.com/apollographql/apollo-client) to query the
 
 ```json
 {
-   "query": "query class($id: Int!) { id name } }",
+   "query": "query class($id: Int!) { class { search(query: $query) { id name } } }",
    "variables": {
       "query": "art"
    }

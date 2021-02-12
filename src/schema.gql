@@ -16,6 +16,21 @@ type Class {
   teacher: Teacher!
 }
 
+type AddTeacherPayload {
+  teacher: Teacher!
+}
+
 type Query {
   class(id: Int!): Class!
+}
+
+type Mutation {
+  """Adds a new teacher to the roster."""
+  addTeacher(input: AddTeacherInput!): AddTeacherPayload!
+}
+
+input AddTeacherInput {
+  email: String!
+  firstName: String!
+  lastName: String!
 }
